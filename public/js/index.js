@@ -11,3 +11,10 @@ socket.on('newMessage', function (data) {
     console.log('Text '  + data.text);
 });
 
+socket.on('loginSucess', function() {
+    console.log('You have sucessfully logged in.');    
+});
+
+socket.on('newUser', function (data) {
+    console.log(data);
+});
