@@ -21,6 +21,18 @@ io.on('connection', (socket) => {
         console.log('User disconnected');
     })
 
+    socket.on('createMessage', (data) => {
+
+        console.log('User created new message, spawning ...');
+        
+        io.emit('newMessage', {
+            user: data.user,
+            text: data.text,
+            createdAt: data.createdAt
+        });
+
+    });
+
 });
 
 
